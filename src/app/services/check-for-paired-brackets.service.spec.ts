@@ -53,4 +53,12 @@ describe('CheckForPairedBracketsService', () => {
   it('allBracketsArePaired should return false for string "}a"', () => {
     expect(service.allBracketsArePaired('}a')).toBeFalse();
   });
+
+  it('allBracketsArePaired should return false for string "{}}"', () => {
+    expect(service.allBracketsArePaired('{}}')).toBeFalse();
+  });
+
+  it('allBracketsArePaired should return false for string "{{}"', () => {
+    expect(service.allBracketsArePaired('{{}')).toBeFalse();
+  });
 });

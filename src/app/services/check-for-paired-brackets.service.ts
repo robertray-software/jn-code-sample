@@ -12,14 +12,18 @@ export class CheckForPairedBracketsService {
     const closeBracket = '}';
     const openBracket = '{';
     const stack = new Stack(theString.length);
-    for (const nextChar of theString) {
-      if (nextChar === openBracket) {
-        stack.push(nextChar);
-      } else if (nextChar === closeBracket) {
-        if (stack.pop() !== openBracket) {
-          return false;
+    try {
+      for (const nextChar of theString) {
+        if (nextChar === openBracket) {
+          stack.push(nextChar);
+        } else if (nextChar === closeBracket) {
+          if (stack.pop() !== openBracket) {
+            return false;
+          }
         }
       }
+    } catch (e) {
+      return false;
     }
     return stack.isEmpty();
   }

@@ -39,10 +39,4 @@ describe('SumOfMultiplesService', () => {
     expect(service.sumOfMultiplesOf3And5Below1000()).toBe(233168);
   });
 
-  // for (let belowNum = 0; belowNum < 1001; belowNum++) {
-  //   it(`Sum of multiples of 3 and 5 below ${belowNum} should be match slower algorithm`, () => {
-  //     expect(service.sumOfMultiplesOf3And5(belowNum)).toBe(service.sumOfMultiplesOf3And5Slower(belowNum));
-  //   });
-  // }
-
 });

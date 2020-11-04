@@ -12,10 +12,16 @@ export class Stack {
   }
 
   push(char: string): void {
+    if (this.length === this.capacity) {
+      throw new Error('Cannot push more because stack is full!');
+    }
     this.stack[this.length++] = char;
   }
 
   pop(): string {
+    if (this.length === 0) {
+      throw new Error('Nothing to pop because stack is empty!');
+    }
     return this.stack[--this.length];
   }
 
